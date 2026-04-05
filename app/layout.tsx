@@ -5,6 +5,7 @@ import SmoothScroll   from '@/components/SmoothScroll'
 import CustomCursor   from '@/components/CustomCursor'
 import ScrollProgress from '@/components/ScrollProgress'
 import Navigation     from '@/components/Navigation'
+import Footer         from '@/components/Footer'
 import CookieBanner   from '@/components/CookieBanner'
 import PageTransition from '@/components/PageTransition'
 
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollProgress />
           <Navigation />
           <main>{children}</main>
+          <Footer />
           <CookieBanner />
         </SmoothScroll>
       </body>
