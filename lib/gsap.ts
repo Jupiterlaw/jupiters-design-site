@@ -32,6 +32,7 @@ export function splitLines(el: HTMLElement) {
       (line) =>
         \`<span class="split-line-wrapper"><span class="split-line">\${line.join(' ')}</span></span>\`
     )
+.join('')
     .join(' ')
   return el.querySelectorAll<HTMLElement>('.split-line')
 }
