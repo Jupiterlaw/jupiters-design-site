@@ -13,19 +13,19 @@ const TECH_FEATURES = [
   {
     title: '實木地板舖設及翻新',
     body: '由選材、收口至打磨與上油，提供新舖及舊木翻新服務。透過專業打磨及塗層處理，延長實木地板壽命，同時保留木材原有質感。',
-    image: 'https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c24ab4cd22147ed505d13d82fa56de9e501b7b55.jpg',
+    image: 'https://images.unsplash.com/photo-1584467735871-8e85353a8413?w=1200&q=80',
     alt: '實木地板打磨翻新',
   },
   {
     title: '地台自流平與工業地台油',
     body: '以自流平找平底層，改善高低不平及裂縫問題；再配合工業中心地台油處理，提升耐磨、抗壓及清潔表現，適合工廠大廈、倉儲及車位空間。',
-    image: 'https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f30c8ac22994c22bea2891bbac27d6b44d7a4228.jpg',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80',
     alt: '工業地台油塗層施工',
   },
   {
     title: '戶外木地板及圍欄系統',
     body: '為天台、平台、花園及泳池邊提供耐候木地板及圍欄方案，兼顧美觀、防滑與排水，令戶外空間更宜居亦更易保養。',
-    image: 'https://pplx-res.cloudinary.com/image/upload/pplx_search_images/249bdc9acce56c07a38b516160a27dc07f5adfce.jpg',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
     alt: '戶外木地板及圍欄',
   },
 ]
