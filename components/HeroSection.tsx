@@ -9,8 +9,8 @@ if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger)
 
 const ROTATING_WORDS = ['家居', '辦公室', '店舖', '工廈', '戶外空間']
 
-const CARPET_IMAGE = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80'
 const CAT_IMAGE = 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=1200&q=80'
+const HARDSURFACE_IMAGE = 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&q=80'
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -49,9 +49,9 @@ export default function HeroSection() {
     <section ref={sectionRef} className="relative h-screen overflow-hidden" aria-label="主視覺區域">
       <div className="hero-split flex h-full">
 
-        {/* 左邊：實木地板 / 地毯 */}
-        <div className="hero-half flex-1 flex items-end p-8 md:p-12" aria-label="實木地板與地毯工程">
-          <img src={CARPET_IMAGE} alt="實木地板舖設" className="hero-bg" />
+        {/* 左邊：貓咪趴在木地板 — pet-friendly */}
+        <div className="hero-half flex-1 flex items-end p-8 md:p-12" aria-label="SPC pet-friendly 地板">
+          <img src={CAT_IMAGE} alt="貓咪趴在木地板，展示 SPC pet-friendly 效果" className="hero-bg" />
           <div className="hero-overlay" />
           <div className="relative z-10 text-cream">
             <p className="font-sans text-xs tracking-[0.3em] uppercase mb-2 opacity-80">
@@ -72,9 +72,9 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 右邊：SPC / 工業地台 / 戶外 — 貓咪趴在木地板展示 pet-friendly */}
+        {/* 右邊：SPC / 工業地台 / 戶外 */}
         <div className="hero-half flex-1 flex items-end p-8 md:p-12" aria-label="SPC、工業地台與戶外工程">
-          <img src={CAT_IMAGE} alt="貓咪趴在木地板，展示 SPC pet-friendly 效果" className="hero-bg" />
+          <img src={HARDSURFACE_IMAGE} alt="SPC 及工業地台地板工程" className="hero-bg" />
           <div className="hero-overlay" />
           <div className="relative z-10 text-cream">
             <p className="font-sans text-xs tracking-[0.3em] uppercase mb-2 opacity-80">
