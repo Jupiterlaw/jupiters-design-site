@@ -97,8 +97,11 @@ export default function HeroSection() {
 
       </div>
 
-      {/* 中央標語 */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-cream text-center pointer-events-none px-4">
+      {/* 中央標語 — isolated layer */}
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center z-20 text-cream text-center pointer-events-none px-4"
+        style={{ willChange: 'transform', isolation: 'isolate' }}
+      >
         <p ref={taglineRef} className="font-sans text-xs tracking-[0.4em] uppercase mb-6 opacity-80">
           香港專業地板工程
         </p>
@@ -109,14 +112,14 @@ export default function HeroSection() {
         >
           <span>提升你的</span>
           <div
-            className="word-rotator ml-4 md:ml-6 overflow-hidden"
+            className="word-rotator ml-4 md:ml-6"
             style={{ height: 'clamp(3.5rem, 10vw, 11rem)' }}
           >
             <div
               className="word-rotator-inner"
               style={{
                 transform: `translateY(-${wordIndex * 100}%)`,
-                transition: 'transform 0.6s cubic-bezier(0.76, 0, 0.24, 1)',
+                transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
               {ROTATING_WORDS.map((word) => (
