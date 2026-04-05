@@ -22,38 +22,30 @@ const CONTACT_LINKS = [
 export default function Footer() {
   return (
     <footer className="section-dark pt-20 pb-8 px-6 md:px-16" aria-label="網站頁尾">
+
+      {/* WhatsApp CTA */}
       <div className="border-b border-white/10 pb-16 mb-16">
-        <p className="font-sans text-cream/50 text-xs tracking-[0.3em] uppercase mb-4">STAY INSPIRED</p>
+        <p className="font-sans text-cream/50 text-xs tracking-[0.3em] uppercase mb-4">GET IN TOUCH</p>
         <h3
           className="font-serif text-cream mb-8"
           style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)', fontWeight: 300 }}
         >
-          訂閱木星設計最新項目與靈感
+          立即與木星設計團隊聯絡
         </h3>
-        <form
-          className="flex flex-col sm:flex-row gap-4 max-w-lg"
-          onSubmit={(e) => e.preventDefault()}
-          aria-label="電子報訂閱"
+        <a
+          href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價。"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-draw text-cream text-[0.65rem] inline-flex items-center gap-2"
+          aria-label="WhatsApp 聯絡我們"
         >
-          <input
-            type="email"
-            placeholder="你的電郵地址"
-            required
-            className="flex-1 bg-transparent border-b border-white/20 text-cream placeholder-cream/30 font-sans text-sm py-3 outline-none focus:border-beige transition-colors"
-            aria-label="電郵地址"
-          />
-          <button
-            type="submit"
-            className="btn-draw text-cream shrink-0 text-[0.65rem]"
-            aria-label="訂閱電子報"
-          >
-            <span className="border-left" />
-            <span className="border-right" />
-            訂閱
-          </button>
-        </form>
+          <span className="border-left" />
+          <span className="border-right" />
+          WhatsApp 立即查詢
+        </a>
       </div>
 
+      {/* Links Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-16">
         <div>
           <p className="font-sans text-cream/40 text-xs tracking-[0.25em] uppercase mb-6">WEBSITE</p>
@@ -118,24 +110,16 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Bottom Bar */}
       <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex flex-wrap gap-4 md:gap-8">
-          <Link
-            href="/privacy"
-            className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
-          >
+          <Link href="/privacy" className="font-sans text-cream/30 hover:text-beige text-xs transition-colors">
             隱私政策
           </Link>
-          <Link
-            href="/terms"
-            className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
-          >
+          <Link href="/terms" className="font-sans text-cream/30 hover:text-beige text-xs transition-colors">
             使用條款
           </Link>
-          <Link
-            href="/conditions"
-            className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
-          >
+          <Link href="/conditions" className="font-sans text-cream/30 hover:text-beige text-xs transition-colors">
             條款及細則
           </Link>
         </div>
@@ -151,6 +135,7 @@ export default function Footer() {
           © {new Date().getFullYear()} 木星設計有限公司 Jupiter's Design Limited. All rights reserved.
         </p>
       </div>
+
     </footer>
   )
 }
