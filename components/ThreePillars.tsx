@@ -51,7 +51,7 @@ export default function ThreePillars() {
     if (!contentRef.current) return
     const els = contentRef.current.querySelectorAll('[data-animate]')
     gsap.fromTo(
-      [...els],
+      Array.from(els),
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.08, duration: 0.7, ease: 'power4.out' }
     )
