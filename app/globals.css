@@ -163,10 +163,8 @@ body {
 .hero-half {
   position: relative;
   overflow: hidden;
-  transition: flex 0.8s var(--ease-expo);
-  will-change: flex;
+  flex: 1;
 }
-.hero-half:hover { flex: 1.08; }
 
 .hero-bg {
   position: absolute;
@@ -286,7 +284,6 @@ footer a:hover::after { width: 100%; }
 @media (max-width: 767px) {
   .hero-split { flex-direction: column !important; }
   .hero-half { flex: 1 !important; min-height: 50vh; }
-  .hero-half:hover { flex: 1 !important; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
 }
