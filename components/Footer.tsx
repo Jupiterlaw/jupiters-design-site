@@ -133,7 +133,7 @@ export default function Footer() {
             使用條款
           </Link>
           <Link
-            href="/terms#conditions"
+            href="/conditions"
             className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
           >
             條款及細則
