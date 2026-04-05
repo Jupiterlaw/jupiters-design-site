@@ -1,108 +1,191 @@
 'use client'
+
 import { useState } from 'react'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const set = (k: string) =>
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+
+  const set =
+    (k: string) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((p) => ({ ...p, [k]: e.target.value }))
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus('sending')
+
+    try {
+      const res = await fetch('https://formspree.io/f/xreoojap', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      if (res.ok) {
+        setStatus('success')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <div className="min-h-screen bg-cream pt-24">
       <div className="px-6 md:px-16 py-16 grid md:grid-cols-2 gap-20 max-w-6xl">
+
+        {/* 左邊：聯絡資訊 */}
         <div>
           <p className="font-sans text-beige text-xs tracking-[0.35em] uppercase mb-4">
-            聯絡我們
+            GET IN TOUCH
           </p>
           <h1
             className="font-serif text-charcoal mb-8"
             style={{ fontSize: 'clamp(2.5rem,5vw,5rem)', fontWeight: 300 }}
           >
-            聯絡木星設計
+            聯絡我們
           </h1>
 
-          <div className="space-y-6">
+          <p className="font-sans text-charcoal/60 font-light leading-relaxed mb-12 max-w-sm">
+            無論是家居地板翻新、商舖或工廈地台工程，歡迎透過以下方式聯絡木星設計，
+            我們會盡快回覆你的查詢。
+          </p>
+
+          <div className="space-y-6 text-sm font-sans">
             <div>
-              <p className="font-sans text-charcoal/40 text-xs uppercase tracking-wider mb-1">
-                服務範圍
-              </p>
-              <p className="font-sans text-charcoal/70 text-sm">
-                香港十八區 · 家居、寫字樓、店舖、工廈及戶外空間
-              </p>
+              <p className="text-charcoal/40 text-xs tracking-wider uppercase mb-1">服務範圍</p>
+              <p className="text-charcoal/70 font-light">香港十八區上門施工</p>
             </div>
+
             <div>
-              <p className="font-sans text-charcoal/40 text-xs uppercase tracking-wider mb-1">
-                WhatsApp / 電話
-              </p>
+              <p className="text-charcoal/40 text-xs tracking-wider uppercase mb-1">WhatsApp</p>
               <a
                 href="https://wa.me/85295715155"
-                className="font-sans text-charcoal/70 text-sm hover:text-beige transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-charcoal/70 hover:text-beige transition-colors font-light"
               >
-                +852 9571 5155（點擊 WhatsApp 查詢）
+                +852 9571 5155
               </a>
             </div>
+
             <div>
-              <p className="font-sans text-charcoal/40 text-xs uppercase tracking-wider mb-1">
-                電郵
-              </p>
+              <p className="text-charcoal/40 text-xs tracking-wider uppercase mb-1">電郵</p>
               <a
                 href="mailto:info@jupitersdesign.com"
-                className="font-sans text-charcoal/70 text-sm hover:text-beige transition-colors"
+                className="text-charcoal/70 hover:text-beige transition-colors font-light"
               >
                 info@jupitersdesign.com
+              </a>
+            </div>
+
+            <div>
+              <p className="text-charcoal/40 text-xs tracking-wider uppercase mb-1">Instagram</p>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-charcoal/70 hover:text-beige transition-colors font-light"
+              >
+                @jupitersdesign
               </a>
             </div>
           </div>
         </div>
 
+        {/* 右邊：表單 */}
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
           className="space-y-8"
           aria-label="聯絡表格"
         >
-          <div className="border-b border-beige/30 pb-2">
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="name"
+              className="font-sans text-charcoal/50 text-xs tracking-wider uppercase"
+            >
+              姓名
+            </label>
             <input
+              id="name"
               type="text"
+              required
               value={form.name}
               onChange={set('name')}
               placeholder="你的姓名"
-              required
-              className="w-full bg-transparent font-sans text-sm text-charcoal outline-none placeholder-charcoal/30 py-2"
-              aria-label="姓名"
+              className="bg-transparent border-b border-beige/40 text-charcoal font-sans text-sm py-3 outline-none focus:border-charcoal transition-colors placeholder-charcoal/20"
             />
           </div>
-          <div className="border-b border-beige/30 pb-2">
+
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="email"
+              className="font-sans text-charcoal/50 text-xs tracking-wider uppercase"
+            >
+              電郵
+            </label>
             <input
+              id="email"
               type="email"
+              required
               value={form.email}
               onChange={set('email')}
-              placeholder="你的電郵"
-              required
-              className="w-full bg-transparent font-sans text-sm text-charcoal outline-none placeholder-charcoal/30 py-2"
-              aria-label="電郵"
+              placeholder="your@email.com"
+              className="bg-transparent border-b border-beige/40 text-charcoal font-sans text-sm py-3 outline-none focus:border-charcoal transition-colors placeholder-charcoal/20"
             />
           </div>
-          <div className="border-b border-beige/30 pb-2">
+
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="message"
+              className="font-sans text-charcoal/50 text-xs tracking-wider uppercase"
+            >
+              查詢內容
+            </label>
             <textarea
-              rows={4}
+              id="message"
+              required
+              rows={5}
               value={form.message}
               onChange={set('message')}
-              placeholder="請簡單描述你的工程需要，例如：面積、位置、物料類型等"
-              required
-              className="w-full bg-transparent font-sans text-sm text-charcoal outline-none placeholder-charcoal/30 py-2 resize-none"
-              aria-label="查詢內容"
+              placeholder="請描述你的地板工程需求，例如：地點、面積、類型等"
+              className="bg-transparent border-b border-beige/40 text-charcoal font-sans text-sm py-3 outline-none focus:border-charcoal transition-colors resize-none placeholder-charcoal/20"
             />
           </div>
+
+          {/* 狀態訊息 */}
+          {status === 'success' && (
+            <p className="font-sans text-sm text-green-700 bg-green-50 px-4 py-3 rounded">
+              ✅ 查詢已成功送出！我們會盡快回覆你。
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="font-sans text-sm text-red-700 bg-red-50 px-4 py-3 rounded">
+              ❌ 發送失敗，請直接 WhatsApp 我們：
+              <a href="https://wa.me/85295715155" className="underline ml-1">
+                +852 9571 5155
+              </a>
+            </p>
+          )}
+
           <button
             type="submit"
-            className="btn-draw text-charcoal"
+            disabled={status === 'sending'}
+            className="btn-draw text-charcoal self-start disabled:opacity-40"
             aria-label="送出查詢"
           >
             <span className="border-left" />
             <span className="border-right" />
-            送出查詢
+            {status === 'sending' ? '發送中...' : '送出查詢'}
           </button>
         </form>
+
       </div>
     </div>
   )
