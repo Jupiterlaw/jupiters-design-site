@@ -11,7 +11,7 @@ const WEBSITE_LINKS = [
 ]
 
 const FOLLOW_LINKS = [
-  { label: 'Instagram', href: 'https://www.instagram.com/', Icon: Instagram },
+  { label: 'Instagram', href: 'https://www.instagram.com/jupitersdesign', Icon: Instagram },
 ]
 
 const CONTACT_LINKS = [
@@ -139,22 +139,14 @@ export default function Footer() {
             條款及細則
           </Link>
         </div>
-        <div className="flex flex-wrap gap-4 md:gap-6 items-center">
-          <a
-            href="https://jupitersdesign.com"
-            className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            jupitersdesign.com
-          </a>
-          <Link
-            href="/account"
-            className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
-          >
-            我的帳戶
-          </Link>
-        </div>
+        <a
+          href="https://jupitersdesign.com"
+          className="font-sans text-cream/30 hover:text-beige text-xs transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          jupitersdesign.com
+        </a>
         <p className="font-sans text-cream/20 text-xs">
           © {new Date().getFullYear()} 木星設計有限公司 Jupiter's Design Limited. All rights reserved.
         </p>
