@@ -49,8 +49,8 @@ export default function HeroSection() {
     <section ref={sectionRef} className="relative h-screen overflow-hidden" aria-label="主視覺區域">
       <div className="hero-split flex h-full">
 
-        {/* 左邊：貓咪趴在木地板 — pet-friendly */}
-        <div className="hero-half flex-1 flex items-end p-8 md:p-12" aria-label="SPC pet-friendly 地板">
+        {/* 左邊：實木地板 */}
+        <div className="hero-half flex-1 flex items-end p-8 md:p-12" aria-label="實木地板及地毯">
           <img src={CAT_IMAGE} alt="貓咪趴在木地板，展示 SPC pet-friendly 效果" className="hero-bg" />
           <div className="hero-overlay" />
           <div className="relative z-10 text-cream">
@@ -104,14 +104,20 @@ export default function HeroSection() {
         </p>
         <div
           ref={headlineRef}
-          className="font-serif leading-none"
+          className="font-serif leading-none flex items-baseline justify-center"
           style={{ fontSize: 'clamp(3.5rem, 10vw, 11rem)', fontWeight: 300 }}
         >
           <span>提升你的</span>
-          <div className="word-rotator ml-4 md:ml-6" style={{ height: 'clamp(3.5rem, 10vw, 11rem)' }}>
+          <div
+            className="word-rotator ml-4 md:ml-6 overflow-hidden"
+            style={{ height: 'clamp(3.5rem, 10vw, 11rem)' }}
+          >
             <div
               className="word-rotator-inner"
-              style={{ transform: `translateY(-${wordIndex * 100}%)` }}
+              style={{
+                transform: `translateY(-${wordIndex * 100}%)`,
+                transition: 'transform 0.6s cubic-bezier(0.76, 0, 0.24, 1)',
+              }}
             >
               {ROTATING_WORDS.map((word) => (
                 <span
