@@ -25,30 +25,22 @@ export default function AboutPage() {
       <div className="px-6 md:px-16 py-24">
         <div className="grid md:grid-cols-2 gap-16 max-w-5xl">
           <div>
-            <h2 className="font-serif text-charcoal text-3xl font-light mb-6">
-              三十多年本地經驗，
-              <br />
-              專注每一塊地板的細節。
+            <h2 className="font-serif text-charcoal text-3xl font-light mb-8 leading-snug">
+              家，本該是我們<br />最安心的避風港。
             </h2>
-            <p className="font-sans text-charcoal/60 font-light leading-relaxed mb-6">
-              木星設計有限公司 Jupiter&apos;s Design Limited 深耕香港超過 30 年，
-              由最初的細小施工團隊，逐步發展成為提供 SPC 地板、實木地板舖設及翻新、
-              地台自流平、工業地台油工程，以及戶外木地板與圍欄的一站式地板工程公司。
+            <p className="font-sans text-charcoal/70 font-light leading-relaxed mb-6">
+              然而，在香港經歷過裝修的人都知道，這往往是一場充滿焦慮的旅程。面對繁雜的建材選擇、難以掌控的進度，以及對施工品質的擔憂，打造夢想家園的過程常常讓人感到疲憊不堪。正是這種深切的共鳴與理解，成為了我們創立的契機。「木星設計有限公司（Jupiter&apos;s Design Limited）」的誕生，不僅僅是出於對空間美學的熱愛，更是為了將這份「安心感」還給每一位屋主。
             </p>
-            <p className="font-sans text-charcoal/60 font-light leading-relaxed mb-6">
-              我們相信，地板不只是行走的表面，而是每天生活、工作與相聚的基礎。
-              因此，從前期現場勘查、物料建議，到施工與完工後保養建議，
-              每一個步驟都由經驗豐富的師傅親自把關。
+            <p className="font-sans text-charcoal/70 font-light leading-relaxed mb-6">
+              我們深信，好的設計不只停留在視覺，而是能被真實感知的日常體驗。想像一下，當您結束疲憊的一天推開家門：空氣中瀰漫著實木的溫潤氣息，赤腳踩在頂級 SPC 地板上那種平滑而踏實的觸感，以及指尖滑過客製化傢俱時的細膩無瑕。對我們而言，這些從來不是冰冷的建材與塗料。它們是構築您每日生活的感官基石。每一塊地板的精準拼接、每一道高端保護漆的塗佈，都是為了讓您的居所更具溫度。
             </p>
-            <p className="font-sans text-charcoal/60 font-light leading-relaxed">
-              無論是細單位家居翻新，還是大型寫字樓、工廈、商舖或戶外平台工程，
-              木星設計都以同一標準對待：準時、穩陣、細緻，
-              讓客戶可以放心交託，把時間放回在空間本身的使用與想像上。
+            <p className="font-sans text-charcoal/70 font-light leading-relaxed">
+              多年來，我們的團隊致力於帶領客戶跨越未知的裝修挑戰，將冰冷的水泥空間轉化為充滿生命力的家。面對香港獨特且多變的格局，我們將堅固的工程技術與優雅的室內設計完美結合。從最底層的木地板鋪設，到全屋傢俱的量身訂製，我們為您消除過程中的所有不確定性。當您選擇木星設計，您不只是聘請了一間工程公司，而是找到了一群與您同樣在乎這座「家」的專業工匠與夥伴。
             </p>
           </div>
           <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-beige-light">
             <Image
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1000&q=80"
+              src="/images/about/story.png"
               alt="木星設計團隊施工與地板細節"
               fill
               className="object-cover"
