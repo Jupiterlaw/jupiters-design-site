@@ -9,6 +9,8 @@ import { Search, X, ArrowUpRight } from 'lucide-react'
 
 const PRIMARY_LINKS = [
   { label: '技術與工藝', href: '/technology' },
+  { label: '施工案例', href: '/portfolio' },
+  { label: '產品對比', href: '/comparison' },
   { label: '關於木星設計', href: '/about' },
   { label: '保養與維護', href: '/care-and-maintenance' },
   { label: '聯絡我們', href: '/contact' },
