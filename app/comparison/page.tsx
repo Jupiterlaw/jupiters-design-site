@@ -30,7 +30,7 @@ const COMPARISON_DATA = [
   },
   {
     feature: '價格範圍',
-    spc: 'HK$80-150/sqft',
+    spc: 'HK$25-60/sqft',
     solid: 'HK$150-300/sqft',
     composite: 'HK$100-180/sqft',
     outdoor: 'HK$120-200/sqft',
