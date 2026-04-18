@@ -141,7 +141,7 @@ const MAINTENANCE_GUIDES = [
 
 export default function ComparisonPage() {
   const [activeTab, setActiveTab] = useState('comparison')
-  const sectionRef = useRef<HTMLElement | null>(null)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

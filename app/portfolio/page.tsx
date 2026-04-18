@@ -79,7 +79,7 @@ const CASE_STUDIES = [
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState('all')
-  const sectionRef = useRef<HTMLElement | null>(null)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
 
   const filteredProjects = activeFilter === 'all' 
