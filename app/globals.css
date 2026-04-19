@@ -88,6 +88,11 @@ body {
   z-index: 500;
   clip-path: circle(0% at 95% 5%);
   transition: clip-path 0.8s var(--ease-expo);
+  pointer-events: none;
+}
+.nav-overlay:not(.open) {
+  opacity: 0;
+  visibility: hidden;
 }
 .nav-overlay.open {
   clip-path: circle(150% at 95% 5%);
