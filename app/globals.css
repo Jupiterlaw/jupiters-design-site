@@ -96,6 +96,7 @@ body {
 }
 .nav-overlay.open {
   clip-path: circle(150% at 95% 5%);
+  pointer-events: auto;
 }
 
 /* ── Clip-Path Reveal (Images) ── */
