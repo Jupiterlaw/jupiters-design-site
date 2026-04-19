@@ -34,7 +34,7 @@ const CASE_STUDIES = [
   {
     id: 3,
     title: '戶外露台木地板',
-    location: '香港屏門',
+    location: '香港元朗',
     area: '2000 sq ft',
     duration: '4 週',
     type: 'outdoor',
