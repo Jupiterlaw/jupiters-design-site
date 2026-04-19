@@ -46,7 +46,7 @@ const CASE_STUDIES = [
     id: 4,
     title: '辦公室複合地板',
     location: '香港太古',
-    area: '300 sq ft',
+    area: '1500 sq ft',
     duration: '2 週',
     type: 'commercial',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663573137272/WGAVXDraoTqzhkuEqdtzNG/portfolio-composite-office-v2-jvowGJ4vaV6wUvbdn4vAvE.webp',
