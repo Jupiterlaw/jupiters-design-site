@@ -1,39 +1,35 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        cream:    '#F5F2EE',
-        charcoal: '#1A1A1A',
-        beige:    '#C8B89A',
-        'beige-light': '#E8DFD0',
-        'charcoal-light': '#2D2D2D',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        brand: {
+          50: "#f6f3ee",
+          100: "#ece4d7",
+          200: "#d6c3a6",
+          300: "#bfa275",
+          400: "#a88554",
+          500: "#8c6a3d",
+          600: "#6f5330",
+          700: "#564026",
+          800: "#3c2d1b",
+          900: "#241b10",
+        },
       },
       fontFamily: {
-        serif:  ['var(--font-cormorant)', 'Georgia', 'serif'],
-        sans:   ['var(--font-inter)', 'system-ui', 'sans-serif'],
-      },
-      fontSize: {
-        'hero': 'clamp(4rem, 12vw, 14rem)',
-        'display': 'clamp(3rem, 8vw, 8rem)',
-        'headline': 'clamp(2rem, 5vw, 5rem)',
-      },
-      transitionTimingFunction: {
-        'expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-      },
-      transitionDuration: {
-        '700': '700ms',
-        '900': '900ms',
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

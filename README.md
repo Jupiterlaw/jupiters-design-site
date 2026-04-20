@@ -1,6 +1,24 @@
-# LUXORA Flooring — Premium Marketing Website
+# Jupiter's Design — Hong Kong Flooring Landing Page
 
-> Next.js 14 · TypeScript · Tailwind CSS · GSAP · Lenis
+Marketing landing page for **Jupiter's Design**, a Hong Kong flooring company
+specialising in SPC, engineered wood, and composite flooring.
+
+Built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
+
+## Features
+
+- **Hero section** with a full-bleed background image and a prominent
+  WhatsApp CTA linking to `+85295715155`.
+- **Product gallery** with 8 flooring products, filterable by category
+  (SPC · Wood · Composite · All).
+- **Project showcase** with interactive before/after cards for three recent
+  Hong Kong installations.
+- **Contact form** with client-side validation (name, email, phone, message)
+  and a success confirmation state.
+- **Fully responsive** mobile layout with an accessible mobile navigation
+  drawer and a floating WhatsApp button.
+- **TypeScript throughout** with explicit type definitions for products,
+  showcase projects, and form values (see `src/types/index.ts`).
 
 ## Quick Start
 
@@ -9,121 +27,52 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000).
 
----
+## Scripts
 
-## Tech Stack
-
-| Layer       | Library                        |
-|-------------|--------------------------------|
-| Framework   | Next.js 14 (App Router)        |
-| Language    | TypeScript                     |
-| Styling     | Tailwind CSS + custom CSS      |
-| Animation   | GSAP 3 + ScrollTrigger         |
-| Smooth Scroll | Lenis                        |
-| Icons       | Lucide React                   |
-| Deployment  | Vercel                         |
-
----
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the dev server on port 3000 |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
 
 ## Project Structure
 
 ```
-luxora-flooring/
+src/
 ├── app/
-│   ├── layout.tsx            ← Root layout (fonts, providers)
-│   ├── page.tsx              ← Homepage
-│   ├── globals.css           ← Global styles + animations
-│   ├── products/             ← Product grid + filter
-│   ├── technology/           ← Editorial scroll page
-│   ├── about/                ← Brand story
-│   ├── careers/              ← Job listings
-│   ├── visualizer/           ← 3D room visualizer embed
-│   ├── dealer-locator/       ← Map-based dealer search
-│   ├── contact/              ← Contact form
-│   └── care-and-maintenance/ ← FAQ / accordion
+│   ├── globals.css       ← Tailwind layer + brand tokens
+│   ├── layout.tsx        ← Root layout + metadata
+│   ├── page.tsx          ← Composes the landing-page sections
+│   └── fonts/            ← Local Geist font files
 ├── components/
-│   ├── Navigation.tsx        ← Fixed nav + fullscreen overlay
-│   ├── HeroSection.tsx       ← Split hero + rotating word
-│   ├── InnovationSection.tsx ← Dark statement section
-│   ├── VisualizerPromo.tsx   ← Clip-path wipe reveal
-│   ├── ThreePillars.tsx      ← Auto-play tabbed carousel
-│   ├── StatsCounter.tsx      ← GSAP animated counters
-│   ├── Footer.tsx            ← Newsletter + links + socials
-│   ├── CustomCursor.tsx      ← Magnetic cursor dot
-│   ├── ScrollProgress.tsx    ← "35 / 100" progress indicator
-│   ├── SmoothScroll.tsx      ← Lenis + GSAP ticker sync
-│   ├── CookieBanner.tsx      ← Slide-up consent banner
-│   └── PageTransition.tsx    ← Route-change animation
+│   ├── ContactForm.tsx   ← Validated contact form + success state
+│   ├── Footer.tsx        ← Contact + services footer
+│   ├── Hero.tsx          ← Hero section with WhatsApp CTA
+│   ├── Navbar.tsx        ← Sticky navbar with mobile drawer
+│   ├── ProductGallery.tsx← Filterable product grid
+│   ├── ProjectShowcase.tsx← Before/after project cards
+│   └── WhatsAppButton.tsx← Shared WhatsApp CTA component
 ├── lib/
-│   ├── gsap.ts               ← GSAP + plugin registration
-│   └── utils.ts              ← cn() helper
+│   ├── constants.ts      ← Brand + contact constants (WhatsApp number, etc.)
+│   └── data.ts           ← Product + project showcase data
 └── types/
-    └── index.ts
-
+    └── index.ts          ← Shared TypeScript types
 ```
-
----
 
 ## Customisation
 
-### Brand Name
-Search-replace `LUXORA` across the codebase.
+- **WhatsApp number**: `src/lib/constants.ts` (`WHATSAPP_PHONE`).
+- **Brand colours**: `tailwind.config.ts` (`brand` palette) and CSS variables
+  in `src/app/globals.css`.
+- **Products**: `src/lib/data.ts` (`PRODUCTS`).
+- **Showcase projects**: `src/lib/data.ts` (`SHOWCASE_PROJECTS`).
 
-### Colours
-Edit `tailwind.config.ts` and the CSS variables in `app/globals.css`:
-```css
-:root {
-  --color-cream:    #F5F2EE;   /* Page background      */
-  --color-charcoal: #1A1A1A;   /* Primary text          */
-  --color-beige:    #C8B89A;   /* Warm accent           */
-}
-```
+## Deployment
 
-### Hero Images
-Replace Unsplash URLs in `components/HeroSection.tsx` with your CDN assets.
-
-### Visualizer
-In `app/visualizer/page.tsx`, replace the placeholder `<div>` with your vendor iframe:
-```tsx
-<iframe
-  src="https://your-visualizer-url.com"
-  className="w-full h-full border-none"
-  title="LUXORA Room Visualizer"
-  allowFullScreen
-/>
-```
-
-### GSAP SplitText (Club GSAP)
-To enable character-by-character reveal, sign up at https://gsap.com/pricing/
-and replace the manual `splitLines()` utility in `lib/gsap.ts` with:
-```ts
-import { SplitText } from 'gsap/SplitText'
-gsap.registerPlugin(SplitText)
-```
-
----
-
-## Deployment (Vercel)
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Or connect your GitHub repo directly in the Vercel dashboard.
-
----
-
-## Accessibility
-
-- All interactive elements have `aria-label`
-- Cookie banner uses `aria-live="polite"`
-- Reduced-motion: GSAP animations disabled via `@media (prefers-reduced-motion: reduce)`
-- Images use Next.js `<Image>` with descriptive `alt` text
-- Hamburger/overlay uses `aria-expanded` + `aria-controls`
-
----
-
-© 2026 LUXORA Flooring. All rights reserved.
+The site is a plain Next.js 14 app and deploys cleanly to Vercel, Netlify, or
+any Node-compatible host. Images are served unoptimized
+(`next.config.mjs → images.unoptimized = true`) so the app can also be
+statically exported via `next build && next export` if needed.
