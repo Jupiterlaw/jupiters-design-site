@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "關於木星設計 — Jupiter's Design Limited",
+  description: '木星設計有限公司紮根香港超過 30 年，專營 SPC 地板、實木地板、地台自流平、工業地台油及戶外木地板工程，提供專業免費上門測量服務。',
+  keywords: ['地板工程', '香港地板公司', 'SPC地板安裝', '實木地板', '木星設計', 'Jupiter Design'],
 }
 
 export default function AboutPage() {

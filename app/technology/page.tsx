@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
-export const metadata: Metadata = { title: '技術與工藝 — 木星設計地板工程' }
+export const metadata: Metadata = {
+  title: '技術與工藝 — 木星設計地板工程',
+  description: 'SPC 石塑地板、實木地板舖設翻新、地台自流平、工業地台油及戶外木地板施工技術詳解，香港專業地板工程團隊。',
+  keywords: ['SPC地板', '實木地板', '地台自流平', '工業地台油', '戶外木地板', '地板施工', '香港地板工程', '圍欄'],
+}
 
 const TECH_FEATURES = [
   {

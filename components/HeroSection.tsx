@@ -62,8 +62,8 @@ export default function HeroSection() {
             </p>
             <a
               href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價" target="_blank" rel="noopener noreferrer"
-              className="btn-draw text-cream text-[0.65rem]"
-              aria-label="查詢實木地板及地毯工程"
+              className="btn-draw text-cream text-xs sm:text-sm"
+              aria-label="WhatsApp 查詢實木地板及地毯工程報價"
             >
               <span className="border-left" />
               <span className="border-right" />
@@ -85,8 +85,8 @@ export default function HeroSection() {
             </p>
             <a
               href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價" target="_blank" rel="noopener noreferrer"
-              className="btn-draw text-cream text-[0.65rem]"
-              aria-label="查詢 SPC 及工業地台工程"
+              className="btn-draw text-cream text-xs sm:text-sm"
+              aria-label="WhatsApp 查詢 SPC 及工業地台地板工程報價"
             >
               <span className="border-left" />
               <span className="border-right" />

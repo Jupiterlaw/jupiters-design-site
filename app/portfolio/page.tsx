@@ -12,6 +12,7 @@ const CASE_STUDIES = [
   {
     id: 1,
     title: 'SPC 現代客廳',
+    alt: '香港中環住宅 SPC 石塑地板安裝完成效果 — 防水防潮、淺色現代風格客廳地板工程',
     location: '香港中環',
     area: '450 sq ft',
     duration: '3 週',
@@ -23,6 +24,7 @@ const CASE_STUDIES = [
   {
     id: 2,
     title: '實木臥室翻新',
+    alt: '香港銅鑼灣高級實木地板安裝實景 — 天然木材紋理、上油保護後溫暖臥室地板效果',
     location: '香港銅鑼灣',
     area: '800 sq ft',
     duration: '2 週',
@@ -34,6 +36,7 @@ const CASE_STUDIES = [
   {
     id: 3,
     title: '戶外露台木地板',
+    alt: '香港元朗戶外露台防水木地板工程 — 防 UV、防霉、防滑 R11 級戶外空間地板完工效果',
     location: '香港元朗',
     area: '2000 sq ft',
     duration: '4 週',
@@ -45,6 +48,7 @@ const CASE_STUDIES = [
   {
     id: 4,
     title: '辦公室複合地板',
+    alt: '香港太古商業空間複合木地板施工實例 — 防潮耐磨、高性價比辦公環境地板方案',
     location: '香港太古',
     area: '1500 sq ft',
     duration: '2 週',
@@ -94,6 +98,16 @@ export default function PortfolioPage() {
         </div>
       </div>
 
+      <section className="px-6 md:px-16 pt-28 pb-10 max-w-6xl mx-auto">
+        <p className="font-sans text-beige text-xs tracking-[0.35em] uppercase mb-4">WORK PORTFOLIO</p>
+        <h1 className="font-serif text-charcoal" style={{ fontSize: 'clamp(2.5rem,5vw,5rem)', fontWeight: 300 }}>
+          香港地板工程案例
+        </h1>
+        <p className="mt-4 max-w-3xl font-sans text-charcoal/65 leading-relaxed">
+          由 SPC 地板安裝、實木地板翻新，到戶外木地板及商業地台工程，我們記錄每個香港地板工程項目的實景成果，方便你比較不同地板方案、施工細節與完成效果。
+        </p>
+      </section>
+
       {/* Filter Section */}
       <div className="px-6 md:px-16 py-12 max-w-6xl mx-auto">
         <p className="font-sans text-charcoal/60 text-lg font-light leading-relaxed mb-8">
@@ -130,7 +144,7 @@ export default function PortfolioPage() {
               <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-beige-light mb-4">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.alt}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
