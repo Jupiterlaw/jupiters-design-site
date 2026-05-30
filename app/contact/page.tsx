@@ -66,7 +66,7 @@ export default function ContactPage() {
             <div>
               <p className="text-charcoal/40 text-xs tracking-wider uppercase mb-1">WhatsApp</p>
               <a
-                href="https://wa.me/85295715155"
+                href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-charcoal/70 hover:text-beige transition-colors font-light"
@@ -168,7 +168,7 @@ export default function ContactPage() {
           {status === 'error' && (
             <p className="font-sans text-sm text-red-700 bg-red-50 px-4 py-3 rounded">
               ❌ 發送失敗，請直接 WhatsApp 我們：
-              <a href="https://wa.me/85295715155" className="underline ml-1">
+              <a href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價" className="underline ml-1">
                 +852 9571 5155
               </a>
             </p>

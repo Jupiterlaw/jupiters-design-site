@@ -33,7 +33,7 @@ export default function Footer() {
           立即與木星設計團隊聯絡
         </h3>
         <a
-          href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價。"
+          href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-draw text-cream text-[0.65rem] inline-flex items-center gap-2"

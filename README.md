@@ -1,6 +1,12 @@
-# LUXORA Flooring — Premium Marketing Website
+# Jupiter's Design Limited / 木星設計有限公司 — Marketing Website
 
 > Next.js 14 · TypeScript · Tailwind CSS · GSAP · Lenis
+
+香港專業地板工程公司網站。專營 SPC 地板、實木地板、地台自流平、工業地台油及戶外木地板工程。
+
+Live: https://www.jupitersdesign.com
+
+---
 
 ## Quick Start
 
@@ -21,98 +27,55 @@ Open [http://localhost:3000](http://localhost:3000)
 | Language    | TypeScript                     |
 | Styling     | Tailwind CSS + custom CSS      |
 | Animation   | GSAP 3 + ScrollTrigger         |
-| Smooth Scroll | Lenis                        |
-| Icons       | Lucide React                   |
-| Deployment  | Vercel                         |
+| Smooth Scroll | Lenis (GSAP ticker sync)    |
+| Fonts       | next/font (Cormorant Garamond + Inter) |
 
 ---
 
 ## Project Structure
 
 ```
-luxora-flooring/
-├── app/
-│   ├── layout.tsx            ← Root layout (fonts, providers)
-│   ├── page.tsx              ← Homepage
-│   ├── globals.css           ← Global styles + animations
-│   ├── products/             ← Product grid + filter
-│   ├── technology/           ← Editorial scroll page
-│   ├── about/                ← Brand story
-│   ├── careers/              ← Job listings
-│   ├── visualizer/           ← 3D room visualizer embed
-│   ├── dealer-locator/       ← Map-based dealer search
-│   ├── contact/              ← Contact form
-│   └── care-and-maintenance/ ← FAQ / accordion
-├── components/
-│   ├── Navigation.tsx        ← Fixed nav + fullscreen overlay
-│   ├── HeroSection.tsx       ← Split hero + rotating word
-│   ├── InnovationSection.tsx ← Dark statement section
-│   ├── VisualizerPromo.tsx   ← Clip-path wipe reveal
-│   ├── ThreePillars.tsx      ← Auto-play tabbed carousel
-│   ├── StatsCounter.tsx      ← GSAP animated counters
-│   ├── Footer.tsx            ← Newsletter + links + socials
-│   ├── CustomCursor.tsx      ← Magnetic cursor dot
-│   ├── ScrollProgress.tsx    ← "35 / 100" progress indicator
-│   ├── SmoothScroll.tsx      ← Lenis + GSAP ticker sync
-│   ├── CookieBanner.tsx      ← Slide-up consent banner
-│   └── PageTransition.tsx    ← Route-change animation
-├── lib/
-│   ├── gsap.ts               ← GSAP + plugin registration
-│   └── utils.ts              ← cn() helper
-└── types/
-    └── index.ts
+app/
+├── layout.tsx              ← Root layout (metadata, JSON-LD, Navigation, Footer)
+├── page.tsx                ← Homepage
+├── globals.css             ← Global CSS + Tailwind
+├── about/                  ← 關於木星設計
+├── care-and-maintenance/   ← 保養 FAQ
+├── careers/                ← 加入我們
+├── comparison/             ← 地板產品對比表
+├── conditions/             ← 條款及細則
+├── contact/                ← 聯絡我們 (Formspree + WhatsApp)
+├── portfolio/              ← 施工案例
+├── privacy/                ← 隱私政策
+├── technology/             ← 技術與工藝
+└── terms/                  ← 使用條款
 
+components/
+├── HeroSection.tsx         ← 首頁 split-screen hero + GSAP 動畫
+├── InnovationSection.tsx   ← 品牌理念區塊
+├── ThreePillars.tsx        ← 三大支柱區塊
+├── StatsCounter.tsx        ← 30+ 年 / 1000+ 項目 / 18 區數字動畫
+├── Navigation.tsx          ← 頂部導航 + 搜尋 + 全屏選單
+├── Footer.tsx              ← 頁腳 + WhatsApp CTA + 社交連結
+├── FloatingWhatsApp.tsx    ← 全域 WhatsApp 浮動按鈕
+├── CookieBanner.tsx        ← Cookie 同意橫幅
+├── CustomCursor.tsx        ← 自訂鼠標
+├── PageTransition.tsx      ← 頁面轉場動畫
+├── SmoothScroll.tsx        ← Lenis + GSAP ticker sync
+├── ScrollProgress.tsx      ← 瀏覽進度指示器
+└── VisualizerPromo.tsx     ← 視覺化推廣區塊
 ```
 
 ---
 
-## Customisation
+## Deployment
 
-### Brand Name
-Search-replace `LUXORA` across the codebase.
-
-### Colours
-Edit `tailwind.config.ts` and the CSS variables in `app/globals.css`:
-```css
-:root {
-  --color-cream:    #F5F2EE;   /* Page background      */
-  --color-charcoal: #1A1A1A;   /* Primary text          */
-  --color-beige:    #C8B89A;   /* Warm accent           */
-}
-```
-
-### Hero Images
-Replace Unsplash URLs in `components/HeroSection.tsx` with your CDN assets.
-
-### Visualizer
-In `app/visualizer/page.tsx`, replace the placeholder `<div>` with your vendor iframe:
-```tsx
-<iframe
-  src="https://your-visualizer-url.com"
-  className="w-full h-full border-none"
-  title="LUXORA Room Visualizer"
-  allowFullScreen
-/>
-```
-
-### GSAP SplitText (Club GSAP)
-To enable character-by-character reveal, sign up at https://gsap.com/pricing/
-and replace the manual `splitLines()` utility in `lib/gsap.ts` with:
-```ts
-import { SplitText } from 'gsap/SplitText'
-gsap.registerPlugin(SplitText)
-```
-
----
-
-## Deployment (Vercel)
+This site is deployed to Vercel, connected via GitHub repo.
 
 ```bash
 npm i -g vercel
 vercel
 ```
-
-Or connect your GitHub repo directly in the Vercel dashboard.
 
 ---
 
@@ -126,4 +89,21 @@ Or connect your GitHub repo directly in the Vercel dashboard.
 
 ---
 
-© 2026 LUXORA Flooring. All rights reserved.
+## SEO
+
+- LocalBusiness JSON-LD schema (in root layout)
+- Metadata with Traditional Chinese keywords: 地板安裝, SPC地板, 香港地板, 地板工程, 實木地板, 地台自流平
+- `zh-Hant` lang attribute
+- Static site generation for all pages
+- OG image + meta descriptions
+
+---
+
+## Primary CTA
+
+- WhatsApp: [+852 9571 5155](https://wa.me/85295715155)
+- Email: [info@jupitersdesign.com](mailto:info@jupitersdesign.com)
+
+---
+
+© 2026 木星設計有限公司 Jupiter's Design Limited. All rights reserved.

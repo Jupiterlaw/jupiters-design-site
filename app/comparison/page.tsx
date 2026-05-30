@@ -337,7 +337,9 @@ export default function ComparisonPage() {
             我們的專業團隊隨時準備為您解答任何問題
           </p>
           <a
-            href="/contact"
+            href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-draw text-cream text-sm"
           >
             <span className="border-left" />

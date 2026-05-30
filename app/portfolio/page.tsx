@@ -188,7 +188,9 @@ export default function PortfolioPage() {
             聯絡我們獲取免費上門測量和專業建議
           </p>
           <a
-            href="/contact"
+            href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-draw text-cream text-sm"
           >
             <span className="border-left" />

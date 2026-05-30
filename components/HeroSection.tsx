@@ -61,7 +61,7 @@ export default function HeroSection() {
               實木地板舖設及翻新、工程木與地毯，一站式專業施工。
             </p>
             <a
-              href="/contact"
+              href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價" target="_blank" rel="noopener noreferrer"
               className="btn-draw text-cream text-[0.65rem]"
               aria-label="查詢實木地板及地毯工程"
             >
@@ -84,7 +84,7 @@ export default function HeroSection() {
               SPC 石塑地板防水耐磨，pet-friendly，適合有小朋友及寵物的家庭與工商空間。
             </p>
             <a
-              href="/contact"
+              href="https://wa.me/85295715155?text=你好，我想查詢地板工程報價" target="_blank" rel="noopener noreferrer"
               className="btn-draw text-cream text-[0.65rem]"
               aria-label="查詢 SPC 及工業地台工程"
             >
